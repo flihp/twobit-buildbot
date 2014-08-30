@@ -33,8 +33,11 @@ slavename = 'openxt-platform'
 passwd = ""
 keepalive = 600
 usepty = 0
-umask = None
+umask = 0002
 maxdelay = 300
+
+# environment variables for commands from master
+os.environ["SLAVE_OE_DOWNLOADS"] = "/mnt/openembedded/downloads"
 
 s = BuildSlave(buildmaster_host, port, slavename, passwd, basedir,
                keepalive, usepty, umask=umask, maxdelay=maxdelay)
