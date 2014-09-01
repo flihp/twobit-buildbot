@@ -37,7 +37,7 @@ umask = 0002
 maxdelay = 300
 
 # environment variables for commands from master
-os.environ["SLAVE_OE_DOWNLOADS"] = "/mnt/openembedded/downloads"
+os.environ["SLAVE_SETUP_MEASURED"] = "/var/lib/buildbot/slaves/bin/meta-measured_setup.sh"
 
 s = BuildSlave(buildmaster_host, port, slavename, passwd, basedir,
                keepalive, usepty, umask=umask, maxdelay=maxdelay)
