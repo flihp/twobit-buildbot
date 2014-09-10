@@ -37,7 +37,9 @@ umask = 0002
 maxdelay = 300
 
 # environment variables for commands from master
+os.environ['SLAVE_SETUP_CORE'] = '/var/lib/buildbot/slaves/bin/core-image-minimal_setup.sh'
 os.environ["SLAVE_SETUP_MEASURED"] = "/var/lib/buildbot/slaves/bin/meta-measured_setup.sh"
+os.environ["SLAVE_SETUP_SELINUX"] = "/var/lib/buildbot/slaves/bin/meta-selinux_setup.sh"
 
 s = BuildSlave(buildmaster_host, port, slavename, passwd, basedir,
                keepalive, usepty, umask=umask, maxdelay=maxdelay)
