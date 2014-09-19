@@ -27,9 +27,9 @@ except ImportError:
   # probably not yet twisted 8.2.0 and beyond, can't set log yet
   pass
 
-buildmaster_host = 'openxt-master.twobit.us'
+buildmaster_host = 'builder.twobit.us'
 port = 9989
-slavename = 'openxt-platform'
+slavename = 'longhaul'
 passwd = ""
 keepalive = 600
 usepty = 0
