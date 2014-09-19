@@ -4,7 +4,7 @@ import os
 from twisted.application import service
 from buildbot.master import BuildMaster
 
-basedir = r'/var/lib/buildbot/masters/openxt'
+basedir = r'/var/lib/buildbot/masters/twobit'
 rotateLength = 10000000
 maxRotatedFiles = 10
 
@@ -27,7 +27,7 @@ except ImportError:
   # probably not yet twisted 8.2.0 and beyond, can't set log yet
   pass
 
-configfile = r'openxt.cfg'
+configfile = r'twobit.cfg'
 
 m = BuildMaster(basedir, configfile)
 m.setServiceParent(application)
