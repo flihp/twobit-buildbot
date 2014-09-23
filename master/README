@@ -1,6 +1,6 @@
 This directory contains buildbot master configuration files.
 
-openxt.cfg : This is the main configuration file for the build master. Current
+twobit.cfg : This is the main configuration file for the build master. Current
              configuration expects the basedir for build master to be at:
              /var/lib/buildbot/masters/openxldbot.tact
 
