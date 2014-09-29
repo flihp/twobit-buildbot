@@ -8,7 +8,7 @@ CORE_FETCH_CONF=${CORE_BUILD}/fetch.conf
 
 # values we'll be setting in local.conf
 DL_DIR="/mnt/openembedded/downloads/"
-GIT_MIRROR="file:///var/lib/git/mirror"
+GIT_MIRROR="file:///var/lib/git"
 
 if [ ! -f ${CORE_CONF} ]; then
     echo "Missing config file for core-image-minimal. Halting."

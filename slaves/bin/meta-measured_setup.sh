@@ -8,7 +8,7 @@ MEASURED_FETCH_CONF=${MEASURED_BUILD}/fetch.conf
 
 # values we'll be setting in local.conf
 DL_DIR="/mnt/openembedded/downloads/"
-GIT_MIRROR="file:///var/lib/git/mirror"
+GIT_MIRROR="file:///var/lib/git"
 
 if [ ! -f ${MEASURED_CONF} ]; then
     echo "Missing config file for meta-measured. Halting."

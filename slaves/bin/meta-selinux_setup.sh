@@ -8,7 +8,7 @@ SELINUX_FETCH_CONF=${SELINUX_BUILD}/fetch.conf
 
 # values we'll be setting in local.conf
 DL_DIR="/mnt/openembedded/downloads/"
-GIT_MIRROR="file:///var/lib/git/mirror"
+GIT_MIRROR="file:///var/lib/git"
 
 if [ ! -f ${SELINUX_CONF} ]; then
     echo "Missing config file for meta-selinux. Halting."
