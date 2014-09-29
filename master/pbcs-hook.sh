@@ -7,8 +7,8 @@ GIT_BUILDBOT=/usr/share/buildbot/contrib/git_buildbot.py
 MASTER="localhost:9989"
 USER_NAME="pbchange"
 AUTH=""
-PROJECT="aes-pipe"
-LOGFILE="/tmp/aes-pipe_git.log"
+PROJECT="SOME-PROJECT"
+LOGFILE="/tmp/${PROJECT}_git.log"
 
 if [ ! -x ${GIT_BUILDBOT} ]; then
     echo "No git_buildbot.py script." 1>&2
