@@ -1,0 +1,4 @@
+[longhaul]
+name = longhaul
+passwd = p4$$w0r
+max-builds = 1

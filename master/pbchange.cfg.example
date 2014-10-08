@@ -1,0 +1,4 @@
+[git-mirror]
+passwd = p4$$w0rd
+port = 9989
+user = pbchange
