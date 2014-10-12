@@ -1,0 +1,5 @@
+This repo contains a buildbot config for a master and slave used to build a
+few projects I'm tracking / working on. You should clone this repo into your
+buildbot directory (/var/lib/buildbot on Debian), copy the relevant *.default
+file into /etc/defaults and then start your build master / slave. Initially
+this probably won't "just work" but it will eventually.
