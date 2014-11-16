@@ -1,5 +1,8 @@
 masters/twobit/http.log
+masters/twobit/pbchange.cfg
 masters/twobit/public_html/
 masters/twobit/twistd.log
 masters/twobit/twistd.pid
+masters/twobit/twobit.htpasswd
+masters/twobit/slaves.cfg
 masters/twobit/state.sqlite
