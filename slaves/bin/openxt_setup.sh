@@ -23,8 +23,9 @@ ALLOW_SWITCH_BRANCH_FAIL='true'
 
 # values we'll be setting in local.conf
 DL_DIR="/mnt/openembedded/downloads/"
-OPENXT_GIT_MIRROR="file:///var/lib/git/openxt"
+OPENXT_GIT_MIRROR="/var/lib/git/openxt"
 OE_GIT_MIRROR="file:///var/lib/git"
+OPENXT_GIT_PROTOCOL="file"
 
 if [ ! -f ${CORE_CONF_SRC} ]; then
     echo "Missing example config file for OpenXT. Halting."
@@ -35,6 +36,7 @@ EQUALITY_REGEX='\?=\|\+=\|=\+\|='
 # set variables in config
 cat "${OPENXT_CONF_SRC}" | sed \
     -e "s&^\([[:space:]]*OPENXT_GIT_MIRROR[[:space:]]*\)\(${EQUALITY_REGEX}\).*$&\1\2\"${OPENXT_GIT_MIRROR}\"&" \
+    -e "s&^\([[:space:]]*OPENXT_GIT_PROTOCOL[[:space:]]*\)\(${EQUALITY_REGEX}\).*$&\1\2\"${OPENXT_GIT_PROTOCOL}\"&" \
     -e "s&^\([[:space:]]*OE_GIT_MIRROR[[:space:]]*\)\(${EQUALITY_REGEX}\).*$&\1\2\"${OE_GIT_MIRROR}\"&" \
     -e "s&^\([[:space:]]*REPO_PROD_CACERT[[:space:]]*\)\(${EQUALITY_REGEX}\).*$&\1\2\"${REPO_PROD_CACERT}\"&" \
     -e "s&^\([[:space:]]*REPO_DEV_CACERT[[:space:]]*\)\(${EQUALITY_REGEX}\).*$&\1\2\"${REPO_DEV_CACERT}\"&" \
