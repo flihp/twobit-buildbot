@@ -19,5 +19,11 @@ masters/twobit/state.sqlite
 masters/twobit/pbchange.cfg
 masters/twobit/slaves.cfg
 masters/twobit/twobit.htpasswd
+# build directories
+masters/twobit/aes-pipe
+masters/twobit/core-image-minimal
+masters/twobit/meta-measured
+masters/twobit/meta-selinux
+masters/twobit/openxt
 # twisted python stuff
 masters/twobit/twistd.*
