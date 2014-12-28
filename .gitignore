@@ -1,5 +1,14 @@
+# openxt signing certs
 slaves/openxt_certs
+# slave specific configs
 slaves/slave.cfg
+# build directories
+slaves/aes-pipe
+slaves/core-image-minimal
+slaves/meta-measured
+slaves/meta-selinux
+slaves/openxt
+
 masters/twobit/http.log
 masters/twobit/pbchange.cfg
 masters/twobit/public_html/
