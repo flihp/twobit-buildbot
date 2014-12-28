@@ -1,6 +1,6 @@
 # openxt signing certs
 slaves/openxt_certs
-# slave specific configs
+# site specific configs
 slaves/slave.cfg
 # build directories
 slaves/aes-pipe
@@ -11,11 +11,13 @@ slaves/openxt
 # twisted python stuff
 slaves/twistd.*
 
+# buildbot master files
 masters/twobit/http.log
-masters/twobit/pbchange.cfg
 masters/twobit/public_html/
-masters/twobit/twistd.log
-masters/twobit/twistd.pid
-masters/twobit/twobit.htpasswd
-masters/twobit/slaves.cfg
 masters/twobit/state.sqlite
+# site specific configs
+masters/twobit/pbchange.cfg
+masters/twobit/slaves.cfg
+masters/twobit/twobit.htpasswd
+# twisted python stuff
+masters/twobit/twistd.*
