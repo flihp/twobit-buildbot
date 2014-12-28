@@ -27,14 +27,22 @@ except ImportError:
   # probably not yet twisted 8.2.0 and beyond, can't set log yet
   pass
 
-buildmaster_host = 'builder.twobit.us'
-port = 9989
-slavename = 'longhaul'
-passwd = ""
-keepalive = 600
-usepty = 0
-umask = 0002
-maxdelay = 300
+# connection data for build master
+from ConfigParser import ConfigParser
+
+with open('slave.cfg') as fp:
+    slave_cfg = ConfigParser()
+    slave_cfg.readfp(fp)
+
+    buildmaster_host = slave_cfg.get('connect', 'buildmaster_host')
+    port = int(slave_cfg.get('connect', 'port'))
+    slavename = slave_cfg.get('connect', 'slavename')
+    passwd = slave_cfg.get('connect', 'passwd')
+    keepalive = int(slave_cfg.get('connect', 'keepalive'))
+    maxdelay = int(slave_cfg.get('connect', 'maxdelay'))
+
+    usepty = int(slave_cfg.get('local', 'usepty'))
+    umask = int(slave_cfg.get('local', 'umask'))
 
 # environment variables for commands from master
 os.environ['SLAVE_SETUP_CORE'] = '/var/lib/buildbot/slaves/bin/core-image-minimal_setup.sh'

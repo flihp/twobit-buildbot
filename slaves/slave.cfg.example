@@ -1,0 +1,14 @@
+# example config file holding some local config options and connection data
+
+[local]
+umask = 0002
+usepty = 0
+
+[connect]
+buildmaster_host = builder.example.org
+port = 9989
+slavename = build_slave
+passwd = secret
+keepalive = 600
+maxdelay = 300
+
