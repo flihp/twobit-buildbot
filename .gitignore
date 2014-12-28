@@ -8,6 +8,8 @@ slaves/core-image-minimal
 slaves/meta-measured
 slaves/meta-selinux
 slaves/openxt
+# twisted python stuff
+slaves/twistd.*
 
 masters/twobit/http.log
 masters/twobit/pbchange.cfg
