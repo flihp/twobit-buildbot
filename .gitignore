@@ -1,3 +1,4 @@
+slaves/openxt_certs
 masters/twobit/http.log
 masters/twobit/pbchange.cfg
 masters/twobit/public_html/
