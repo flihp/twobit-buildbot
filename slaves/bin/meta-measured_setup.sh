@@ -2,27 +2,16 @@
 
 SLAVE_ROOT=/var/lib/buildbot/slaves
 MEASURED_BUILD=${SLAVE_ROOT}/meta-measured/build/
-MEASURED_CONF=${MEASURED_BUILD}/conf/local.conf
-MEASURED_LAYERS=${MEASURED_BUILD}/LAYERS
+MEASURED_AUTO_CONF=${MEASURED_BUILD}/conf/auto.conf
 MEASURED_FETCH_CONF=${MEASURED_BUILD}/fetch.conf
 
-# values we'll be setting in local.conf
-DL_DIR="/mnt/openembedded/downloads/"
+# set values in bitbake auto builder config file
+cat << EOL > ${MEASURED_AUTO_CONF}
+DL_DIR ?= "/mnt/openembedded/downloads/"
+EOL
+
+# set value in fetch config file 
+cat << EOL > ${MEASURED_FETCH_CONF}
 GIT_MIRROR="file:///var/lib/git"
-
-if [ ! -f ${MEASURED_CONF} ]; then
-    echo "Missing config file for meta-measured. Halting."
-    exit 1
-fi
-
-# set DL_DIR
-sed -i "s&^\([[:space:]]*DL_DIR[[:space:]]*\)\(\?=\|\+=\|=\+\|=\).*$&\1\2 \"${DL_DIR}\"&" ${MEASURED_CONF}
-if [ $? -ne 0 ]; then
-    exit $?
-fi
-
-echo "GIT_MIRROR=\"${GIT_MIRROR}\"" > ${MEASURED_FETCH_CONF}
-if [ $? -ne 0 ]; then
-    exit $?
-fi
+EOL
 
