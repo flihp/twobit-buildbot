@@ -10,6 +10,7 @@ REPO_PROD_CACERT="${OPENXT_CERTDIR}/prod-cacert.pem"
 REPO_DEV_CACERT="${OPENXT_CERTDIR}/dev-cacert.pem"
 REPO_DEV_SIGNING_CERT="${OPENXT_CERTDIR}/dev-cacert.pem"
 REPO_DEV_SIGNING_KEY="${OPENXT_CERTDIR}/dev-cakey.pem"
+CORES_TWICE=$(($(nproc)*2))
 OPENXT_NAME_SITE="${1:-autobuilder}"
 OPENXT_BUILD_TYPE="${2:-dev}"
 # positional arguments are bad, use getopt
@@ -58,6 +59,8 @@ echo "ID=\"${OPENXT_BUILD_ID}\"" >> ${OPENXT_CONF_DST}
 if [ $? -ne 0 ]; then
     exit $?
 fi
+echo "OE_BB_THREADS=\"${CORES_TWICE}\"" >> ${OPENXT_CONF_DST}
+
 if [ ! -z "${ALLOW_SWITCH_BRANCH_FAIL}" ]; then
     echo "ALLOW_SWITCH_BRANCH_FAIL=\"${ALLOW_SWITCH_BRANCH_FAIL}\"" >> ${OPENXT_CONF_DST}
     if [ $? -ne 0 ]; then
