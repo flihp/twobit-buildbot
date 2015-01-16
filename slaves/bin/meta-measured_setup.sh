@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CORES_TWICE=$(($(ncores)*2))
+CORES_TWICE=$(($(nproc)*2))
 SLAVE_ROOT=/var/lib/buildbot/slaves
 MEASURED_BUILD=${SLAVE_ROOT}/meta-measured/build/
 MEASURED_AUTO_CONF=${MEASURED_BUILD}/conf/auto.conf

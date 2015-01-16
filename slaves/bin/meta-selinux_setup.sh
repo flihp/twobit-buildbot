@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CORES_TWICE=$(($(ncores)*2))
+CORES_TWICE=$(($(nproc)*2))
 SLAVE_ROOT=/var/lib/buildbot/slaves
 SELINUX_BUILD=${SLAVE_ROOT}/meta-selinux/build/
 SELINUX_AUTO_CONF=${SELINUX_BUILD}/conf/auto.conf

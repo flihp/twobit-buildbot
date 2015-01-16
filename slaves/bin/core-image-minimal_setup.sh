@@ -4,7 +4,7 @@ SLAVE_ROOT=/var/lib/buildbot/slaves
 CORE_BUILD=${SLAVE_ROOT}/core-image-minimal/build/
 CORE_AUTO_CONF=${CORE_BUILD}/conf/auto.conf
 CORE_FETCH_CONF=${CORE_BUILD}/fetch.conf
-CORES_TWICE=$(($(ncores)*2))
+CORES_TWICE=$(($(nproc)*2))
 
 # set values in bitbake auto builder config file
 cat << EOF > ${CORE_AUTO_CONF}
